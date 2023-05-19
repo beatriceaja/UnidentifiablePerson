@@ -1,0 +1,44 @@
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+
+fig, ax = plt.subplots()
+
+# Set initial position and size of the person
+x_position = 0
+y_position = 0
+person_size = 1
+
+# Define the person's body parts
+head = plt.Circle((x_position, y_position), person_size * 0.3, color='black')
+body = plt.Rectangle((x_position - person_size * 0.1, y_position - person_size * 0.3),
+                     person_size * 0.2, person_size * 0.4, color='black')
+left_leg = plt.Rectangle((x_position - person_size * 0.1, y_position - person_size * 0.7),
+                         person_size * 0.1, person_size * 0.4, color='black')
+right_leg = plt.Rectangle((x_position, y_position - person_size * 0.7),
+                          person_size * 0.1, person_size * 0.4, color='black')
+
+# Add body parts to the plot
+ax.add_patch(head)
+ax.add_patch(body)
+ax.add_patch(left_leg)
+ax.add_patch(right_leg)
+
+# Set axis limits and aspect ratio
+ax.set_xlim([-1, 1])
+ax.set_ylim([-1, 1])
+ax.set_aspect('equal')
+
+# Function to update the animation frame
+def update(frame):
+    # Move the person to the right
+    x_position += 0.01
+    head.center = (x_position, y_position)
+    body.set_x(x_position - person_size * 0.1)
+    left_leg.set_x(x_position - person_size * 0.1)
+    right_leg.set_x(x_position)
+
+# Create the animation
+animation = animation.FuncAnimation(fig, update, frames=100, interval=50)
+
+# Display the animation
+plt.show()
