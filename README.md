@@ -1,6 +1,6 @@
 # UnidentifiablePerson
 
-This code uses the matplotlib.animation module to create an animation of a anonymous person. It starts by importing the necessary modules. Then, it creates a figure and an axis object using plt.subplots(). The initial position and size of the person are set, along with the dimensions of the different body parts (head, body, left leg, right leg), represented by circles and rectangles.
+This code uses the matplotlib.animation module to create an animation of a anonymous person. It starts by importing the necessary modules. Then it creates a figure and an axis object using plt.subplots(). The initial position and size of the person are set, along with the dimensions of the different body parts (head, body, left leg, right leg), represented by circles and rectangles.
 
 The body parts are added to the plot using ax.add_patch() to display them. The axis limits and aspect ratio are set to define the visible area of the plot.
 
