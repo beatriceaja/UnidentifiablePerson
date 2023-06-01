@@ -17,7 +17,7 @@ left_leg = plt.Rectangle((x_position - person_size * 0.1, y_position - person_si
 right_leg = plt.Rectangle((x_position, y_position - person_size * 0.7),
                           person_size * 0.1, person_size * 0.4, color='black')
 
-# Add body parts to the plot
+# Add body parts to the given plot
 ax.add_patch(head)
 ax.add_patch(body)
 ax.add_patch(left_leg)
