@@ -17,7 +17,7 @@ left_leg = plt.Rectangle((x_position - person_size * 0.1, y_position - person_si
 right_leg = plt.Rectangle((x_position, y_position - person_size * 0.7),
                           person_size * 0.1, person_size * 0.4, color='black')
 
-# Add body parts to the given plot
+# Add body parts to the plot
 ax.add_patch(head)
 ax.add_patch(body)
 ax.add_patch(left_leg)
@@ -30,6 +30,7 @@ ax.set_aspect('equal')
 
 # Function to update the animation frame
 def update(frame):
+    nonlocal x_position
     # Move the person to the right
     x_position += 0.01
     head.center = (x_position, y_position)
